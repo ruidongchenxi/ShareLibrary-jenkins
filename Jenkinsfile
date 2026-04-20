@@ -1,4 +1,5 @@
-@Library('jenkinslib')-
+#!groovy
+@Library('jenkinslib') _
 def tools = new org.devops.tools()
 String workspace = "/opt/jenkins/workspace"
 pipeline{
@@ -50,9 +51,12 @@ pipeline{
                 stage("CodeScan"){
 			        steps{
 				        timeout(time:30,unit:"MINUTES"){
-					        println('代码扫描')
-                            tools.PrintMes("this is my lib!")
+				            script{
+					            println('代码扫描')
+                                tools.PrintMes("this is my lib!")
+				            }
 				        }
+				        //tools.PrintMes("this is my lib!")
 			        }
 		        }
             }
