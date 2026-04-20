@@ -27,7 +27,7 @@ pipeline{
 					script{//填写运行的代码
 						println('获取代码')
 						println("${test}")
-						 input id: 'Test', message: '是否继续', ok: '是，继续吧！', parameters: [choice(choices: ['a', 'b'], name: 'test')], submitter: 'admin，'
+						input id: 'Test', message: '是否继续', ok: '是，继续吧！', parameters: [choice(choices: ['a', 'b'], name: 'test')], submitter: 'admin，'
 					}
 				}
 			}
@@ -43,6 +43,7 @@ pipeline{
 					        def mvnHome = tool "m2"
 					        println(mvnHome)
 					        sh "${mvnHome}/bin/mvn --version"
+							tools.PrintMes("this is my lib!","green")
 				            }
 				        }
 			        }
