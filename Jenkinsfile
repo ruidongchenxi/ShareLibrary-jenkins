@@ -21,7 +21,7 @@ pipeline{
 	stages{
 	    
 		stage("GetCode"){
-		    when { environment name: 'test', value: 'abcd' }
+		   // when { environment name: 'test', value: 'abcd' }
 			steps{ //步骤
 				timeout(time:5,unit:"MINUTES"){ //步骤时间
 					script{//填写运行的代码
@@ -43,7 +43,7 @@ pipeline{
 					        def mvnHome = tool "m2"
 					        println(mvnHome)
 					        sh "${mvnHome}/bin/mvn --version"
-							tools.PrintMes("this is my lib!","green")
+							tools.PrintMes("应用打包!","green")
 				            }
 				        }
 			        }
@@ -52,7 +52,7 @@ pipeline{
 			        steps{
 				        timeout(time:30,unit:"MINUTES"){
 					        println('代码扫描')
-                            tools.PrintMes("this is my lib!","green")
+                            tools.PrintMes("代码扫描","green")
 				        }
 			        }
 		        }
