@@ -51,7 +51,7 @@ pipeline{
 			        steps{
 				        timeout(time:30,unit:"MINUTES"){
 					        println('代码扫描')
-                            tools.PrintMes("this is my lib!")
+                            tools.PrintMes("this is my lib!","green")
 				        }
 			        }
 		        }
