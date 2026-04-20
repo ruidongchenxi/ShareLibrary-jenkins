@@ -1,4 +1,4 @@
-@Library('jenkinslib')-
+@Library('jenkinslib') _
 def tools = new org.devops.tools()
 String workspace = "/opt/jenkins/workspace"
 pipeline{
